@@ -9,6 +9,8 @@ import {
 } from "react-native";
 import { useEffect, useState } from "react";
 
+
+
 const PostPage = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
@@ -31,6 +33,7 @@ const PostPage = () => {
         data={posts}
         renderItem={Item}
         keyExtractor={(item) => item.id}
+        initialNumToRender={20}
       />
     </SafeAreaView>
   );
