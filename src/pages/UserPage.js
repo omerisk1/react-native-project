@@ -15,7 +15,6 @@ import {
 import { useEffect, useState } from "react";
 import Axios from "axios";
 
-
 const UserPage = ({ navigation }) => {
   const [filterData, setFilterData] = useState([]);
   const [masterData, setMasterData] = useState([]);
@@ -72,6 +71,10 @@ const UserPage = ({ navigation }) => {
           borderRadius: 6,
           borderWidth: 0.3,
           borderColor: "#1075a9",
+          shadowColor: "#000",
+          shadowOffset: { width: 0, height: 3 },
+          shadowOpacity: 0.3,
+          shadowRadius: 5,
         }}
       >
         <Text style={styles.users}>{item.username}</Text>
