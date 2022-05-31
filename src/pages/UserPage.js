@@ -15,9 +15,6 @@ import {
 import { useEffect, useState } from "react";
 import Axios from "axios";
 
-const image = {
-  uri: "https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg?w=2000",
-};
 
 const UserPage = ({ navigation }) => {
   const [filterData, setFilterData] = useState([]);
@@ -28,7 +25,6 @@ const UserPage = ({ navigation }) => {
 
   useEffect(() => {
     userAPI();
-    setLoading(false);
   }, []);
 
   const searchFilter = (text) => {
@@ -55,6 +51,7 @@ const UserPage = ({ navigation }) => {
       .then((responseJson) => {
         setFilterData(responseJson);
         setMasterData(responseJson);
+        setLoading(false);
       })
       .catch((error) => {
         console.error(error);

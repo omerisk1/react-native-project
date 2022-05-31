@@ -6,7 +6,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import UserPage from "./src/pages/UserPage"
 import PostPage from "./src/pages/PostPage"
 import { CartProvider,cartContext } from "./src/context/Context"
-import { ScreenNavigator } from "./src/pages/CustomNavigation"
+import { ScreenNavigator } from "./src/components/CustomNavigation"
+import { ScreenNavigatorPost } from "./src/components/CustomNavigationPost"
 
 
 
@@ -38,7 +39,7 @@ export default function App() {
           })}
         >
           <Tab.Screen name="Users" component={ScreenNavigator} options={{headerShown:false}} />
-          <Tab.Screen name="Post" component={PostPage} navigationOptions={{headerShown: false}} />
+          <Tab.Screen name="Post" component={ScreenNavigatorPost} options={{headerShown:false}}/>
         </Tab.Navigator>
       </NavigationContainer>
     </CartProvider>
